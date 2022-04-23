@@ -4,9 +4,15 @@ import * as productosController from "../controllers/productos.controller"
 const router = Router();
 
 router.get("/list", productosController._getListProductos);
+router.get("/byCode/:id", productosController._getProductByCode);
+router.get("/entradas/registro", productosController._getRegistroEntradas);
+
 
 router.post("/save", productosController._guardarNuevoProduto);
+router.post("/entradas/save", productosController._saveRegistroEntrada);
+router.post("/venta/save", productosController._saveVenta);
 
-
+router.get("/tipopagos/list", productosController._getTiposPagos);
+router.get("/tipoEntradas/list", productosController._getTiposEntradas);
 
 module.exports = router;
