@@ -1,0 +1,40 @@
+{
+  "name": "api.apeamac.com",
+  "version": "1.0.0",
+  "description": "APi para proyecto de prueba de APEAM",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir build",
+    "dev": "nodemon --exec npx babel-node src/index.js",
+    "start": "node build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adalidxz/api.apeamac.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adalidxz/api.apeamac.com/issues"
+  },
+  "homepage": "https://github.com/adalidxz/api.apeamac.com#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mssql": "^6.3.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/register": "^7.15.3",
+    "@babel/runtime": "^7.12.5",
+    "helmet": "^4.4.1",
+    "nodemon": "^2.0.7"
+  }
+}
