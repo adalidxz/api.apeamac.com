@@ -2,6 +2,28 @@ import * as sql from 'mssql';
 import moment from 'moment';
 import { config } from '../settings/dbconfig';
 
+export const deleteProducto = async (idProducto) => {
+    const query = `UPDATE Productos SET Active=0WHERE idProducto=${idProducto}`;
+    try {
+        const pool = await sql.connect(config);
+        const data = await pool.request().query(query);
+        return { state: true, productos: data.rowsAffected };
+    } catch (error) {
+        console.log(error);
+        return { state: false, message: error };
+    }
+}
+export const updateProducto = async (idProveedor, Producto, Descripcion, Codigo, idProducto)=>{
+    const query = `UPDATE Productos SET idProveedor=${idProveedor}, Producto='${Producto}', Descripcion='${Descripcion}', Codigo='${Codigo}' WHERE idProducto=${idProducto}`;
+    try {
+        const pool = await sql.connect(config);
+        const data = await pool.request().query(query);
+        return { state: true, productos: data.rowsAffected };
+    } catch (error) {
+        console.log(error);
+        return { state: false, message: error };
+    }
+}
 
 export const registroVentaPorProducto = async (producto,idVenta)=>{
     const inserted = [];

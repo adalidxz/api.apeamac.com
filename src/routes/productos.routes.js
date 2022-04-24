@@ -12,6 +12,10 @@ router.post("/save", productosController._guardarNuevoProduto);
 router.post("/entradas/save", productosController._saveRegistroEntrada);
 router.post("/venta/save", productosController._saveVenta);
 
+
+router.put("/update/", productosController._updateProducto)
+router.delete("/remove/:id", productosController._deleteProducto)
+
 router.get("/tipopagos/list", productosController._getTiposPagos);
 router.get("/tipoEntradas/list", productosController._getTiposEntradas);
 

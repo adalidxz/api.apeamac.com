@@ -1,5 +1,25 @@
 import * as helpers from '../helpers/productos.help'
+export const _deleteProducto = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const data = await helpers.deleteProducto(id);
+        res.json(data);
+    } catch (error) {
+        res.json({ state: false, messg: error });
+    }
 
+}
+
+export const _updateProducto = async(req,res)=>{
+    const {idProveedor,Producto,Descripcion,Codigo,idProducto} = req.body;
+    try {
+        const data = await helpers.updateProducto(idProveedor, Producto, Descripcion, Codigo, idProducto);
+        res.json(data);
+    } catch (error) {
+        res.json({ state: false, messg: error });
+    }
+
+}
 
 export const _saveVenta = async(req,res)=>{
     const { productos, total, efectivo } = req.body
